@@ -58,6 +58,15 @@ static void postOrder(Node root) {
     postOrder(root.right);
     System.out.print(root.key +" ");
   }
+
+  static void preOrder(Node root) {
+    if (root == null) {
+      return;
+    }
+    System.out.print(root.key +" ");
+    preOrder(root.left);
+    preOrder(root.right);
+  }
 public static void main(String args[])  
 {
     
@@ -69,7 +78,7 @@ public static void main(String args[])
     insert(root, 70);  
     insert(root, 60);  
     insert(root, 80);   
-    postOrder(root); 
+    preOrder(root); 
 
     
 }  
