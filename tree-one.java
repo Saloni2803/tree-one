@@ -49,6 +49,15 @@ static void Inorder(Node root)
         Inorder(root.right);  
     }  
 }    
+static void postOrder(Node root) {
+    if (root == null) {
+      return;
+    }
+
+    postOrder(root.left);
+    postOrder(root.right);
+    System.out.print(root.key +" ");
+  }
 public static void main(String args[])  
 {
     
@@ -60,7 +69,8 @@ public static void main(String args[])
     insert(root, 70);  
     insert(root, 60);  
     insert(root, 80);   
-    Inorder(root);  
+    postOrder(root); 
+
     
 }  
 } 
