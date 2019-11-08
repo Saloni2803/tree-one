@@ -21,7 +21,7 @@ static Node insert(Node root, int data)
 {  
     Node newnode = newNode(data);  
     if (root == null){
-        root = newnode;      
+        root = newnode;  
     }
     else if (data < root.data)  
         root.left=insert(root.left,data);  
@@ -29,17 +29,7 @@ static Node insert(Node root, int data)
         root.right=insert(root.right,data);  
     return root;
 }  
-
-static void Inorder(Node root)  
-{  
-    if (root == null)  
-        return;  
-    else {  
-        Inorder(root.left);  
-        System.out.print( root.data +" ");  
-        Inorder(root.right);  
-    }  
-}    
+  
 
 static void Postorder(Node root)  
 {  
@@ -52,23 +42,14 @@ static void Postorder(Node root)
     }  
 }
 
-static void Preorder(Node root)  
-{  
-    if (root == null)  
-        return;  
-    else {  
-        System.out.print( root.data +" "); 
-        Preorder(root.left);   
-        Preorder(root.right);  
-    }  
-}  
+
 
 public static void main(String args[])  
 {
     Node root = null;  
     root = insert(root, 50);  
     root = insert(root, 30);  
-    root = insert(root, 20);  
+    root = insert(root, 20);   
     root = insert(root, 40);  
     root = insert(root, 70);  
     root = insert(root, 60);  
@@ -76,8 +57,7 @@ public static void main(String args[])
     Inorder(root);  
     System.out.println(" ");
     Postorder(root);
-    System.out.println(" ");
-    Preorder(root);
+   
     
 }  
-} 
+}
